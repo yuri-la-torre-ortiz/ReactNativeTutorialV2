@@ -4,14 +4,14 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View /*style={styles.container}*/>
       <Text>Hello, world!</Text>
-      <StatusBar style="auto" />
+      {/* <StatusBar style="auto" /> */}
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+/* const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -19,3 +19,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+ */
