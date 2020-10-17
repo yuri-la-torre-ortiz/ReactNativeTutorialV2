@@ -1,28 +1,37 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import ColorBox from './components/ColorBox';
+import { Text, View, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 
-export default function App() {
+const Food = (props) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>
-        Here are some boxes of different colors
-      </Text>
-      <ColorBox colorName="Cyan" hexCode="#2aa198" />
-      <ColorBox colorName="Blue" hexCode="#268bd2" />
-      <ColorBox colorName="Magenta" hexCode="#d33678" />
-      <ColorBox colorName="Orange" hexCode="#cb4b16" />
+    <View style={styles.food}>
+      <Text style={styles.text}>{props.name}</Text>
     </View>
   );
-}
+};
+
+const FOODS = ['Apples', 'Broccoli', 'Cookies', 'Doritos', 'Eclairs'];
+
+const App = () => {
+  return (
+    <FlatList
+      data={FOODS}
+      keyExtractor={(item) => item}
+      renderItem={({ item }) => <Food name={item} />}
+    />
+  );
+};
+
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 40,
-    paddingHorizontal: 10,
-  },
-  heading: {
-    fontSize: 18,
-    fontWeight: 'bold',
+  food: {
+    justifyContent: 'center',
+    padding: 10,
+    backgroundColor: 'teal',
     marginBottom: 10,
   },
+  text: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
 });
+
+export default App;
