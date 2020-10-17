@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import ColorBox from './components/ColorBox';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <View style={[styles.box, styles.orange]}>
         <Text style={styles.boxText}>Orange: #cb4b16</Text>
       </View>
+      <ColorBox />
     </View>
   );
 }
@@ -35,6 +37,7 @@ const styles = StyleSheet.create({
   box: {
     padding: 10,
     justifyContent: 'center',
+    borderRadius: 3,
     alignItems: 'center',
     marginBottom: 10,
   },
