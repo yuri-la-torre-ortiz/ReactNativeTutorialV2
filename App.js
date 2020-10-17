@@ -1,57 +1,57 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={[styles.textContainer, styles.textContainer0]}>
+      <Text style={styles.heading}>
         Here are some boxes of different colors
       </Text>
-      <Text style={[styles.textContainer, styles.textContainer1]}>
-        Hello, world!
-      </Text>
-      <Text style={[styles.textContainer, styles.textContainer2]}>
-        Hello, world!
-      </Text>
-      <Text style={[styles.textContainer, styles.textContainer3]}>
-        Hello, world!
-      </Text>
-      <Text style={[styles.textContainer, styles.textContainer4]}>
-        Hello, world!
-      </Text>
+      <View style={[styles.box, styles.cyan]}>
+        <Text style={styles.boxText}>Cyan #2aa198</Text>
+      </View>
+      <View style={[styles.box, styles.blue]}>
+        <Text style={styles.boxText}>Blue: #268bd2</Text>
+      </View>
+      <View style={[styles.box, styles.magenta]}>
+        <Text style={styles.boxText}>Magenta: #d33678</Text>
+      </View>
+      <View style={[styles.box, styles.orange]}>
+        <Text style={styles.boxText}>Orange: #cb4b16</Text>
+      </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
-    margin: 20,
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    flex: 0.5,
+    paddingTop: 40,
+    paddingHorizontal: 10,
   },
-  textContainer: {
-    flex: 0.2,
-    justifyContent: 'center',
-    marginTop: 10,
-    color: 'white',
-    alignContent: 'center',
-  },
-  textContainer0: {
-    color: 'black',
+  heading: {
+    fontSize: 18,
     fontWeight: 'bold',
-    fontSize: 15,
+    marginBottom: 10,
   },
-  textContainer1: {
-    backgroundColor: 'cyan',
+  box: {
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
   },
-  textContainer2: {
+  cyan: {
+    backgroundColor: '#2aa198',
+  },
+  blue: {
     backgroundColor: '#268bd2',
   },
-  textContainer3: {
-    backgroundColor: 'magenta',
+  magenta: {
+    backgroundColor: '#d33678',
   },
-  textContainer4: {
-    backgroundColor: 'orange',
+  orange: {
+    backgroundColor: '#cb4b16',
+  },
+  boxText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
