@@ -20,7 +20,7 @@ export default function App() {
       <View style={[styles.box, styles.orange]}>
         <Text style={styles.boxText}>Orange: #cb4b16</Text>
       </View>
-      <ColorBox />
+      <ColorBox colorName="Cyan" hexCode="#2aa198" />
     </View>
   );
 }
