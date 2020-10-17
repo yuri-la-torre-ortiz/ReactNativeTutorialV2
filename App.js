@@ -1,28 +1,47 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import ColorBox from './components/ColorBox';
+import { Text, View, StyleSheet, SectionList } from 'react-native';
 
-export default function App() {
+const Food = props => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>
-        Here are some boxes of different colors
-      </Text>
-      <ColorBox colorName="Cyan" hexCode="#2aa198" />
-      <ColorBox colorName="Blue" hexCode="#268bd2" />
-      <ColorBox colorName="Magenta" hexCode="#d33678" />
-      <ColorBox colorName="Orange" hexCode="#cb4b16" />
+    <View style={styles.food}>
+      <Text style={styles.text}>{props.name}</Text>
     </View>
   );
 }
+
+const FOODS = [
+  { title: 'Healthy', data: ['Apples', 'Broccoli']},
+  { title: 'Not so Healthy', data: ['Cookies', 'Doritos', 'Eclairs']},
+];
+
+const App = () => {
+  return (
+    <SectionList
+      sections={FOODS}
+      keyExtractor={item => item}
+      renderItem={data => <Food name={data.item} />}
+      renderSectionHeader={({ section }) => (
+        <Text style={styles.header}>{section.title}</Text>
+      )}
+    />
+  );
+}
+
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 40,
-    paddingHorizontal: 10,
-  },
-  heading: {
-    fontSize: 18,
-    fontWeight: 'bold',
+  food: {
+    justifyContent: 'center',
+    padding: 10,
+    backgroundColor: 'teal',
     marginBottom: 10,
   },
+  text: {
+    color: 'white',
+    fontWeight: 'bold'
+  },
+  header: {
+    fontSize: 18,
+    marginBottom: 5
+  }
 });
+
+export default App;
