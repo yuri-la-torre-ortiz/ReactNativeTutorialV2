@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import ColorBox from './components/ColorBox';
 
-
 const COLORS = [
   { colorName: 'Base03', hexCode: '#002b36' },
   { colorName: 'Base02', hexCode: '#073642' },
@@ -24,15 +23,15 @@ const COLORS = [
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>
-        Here are some boxes of different colors
-      </Text>
-      <ColorBox colorName="Cyan" hexCode="#2aa198" />
-      <ColorBox colorName="Blue" hexCode="#268bd2" />
-      <ColorBox colorName="Magenta" hexCode="#d33678" />
-      <ColorBox colorName="Orange" hexCode="#cb4b16" />
-    </View>
+    <FlatList
+      style={styles.container}
+      data={COLORS}
+      keyExtractor={(item) => item.colorName}
+      renderItem={({ item }) => (
+        <ColorBox colorName={item.colorName} hexCode={item.hexCode} />
+      )}
+      ListHeaderComponent={<Text style={styles.heading}>Solarized</Text>}
+    />
   );
 }
 const styles = StyleSheet.create({
