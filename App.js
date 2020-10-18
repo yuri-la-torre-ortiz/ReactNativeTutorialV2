@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import ColorBox from './components/ColorBox';
+import { NavigationContainer } from '@react-navigation/native';
 
 const COLORS = [
   { colorName: 'Base03', hexCode: '#002b36' },
@@ -23,15 +24,19 @@ const COLORS = [
 
 export default function App() {
   return (
-    <FlatList
-      style={styles.container}
-      data={COLORS}
-      keyExtractor={(item) => item.colorName}
-      renderItem={({ item }) => (
-        <ColorBox colorName={item.colorName} hexCode={item.hexCode} />
-      )}
-      ListHeaderComponent={<Text style={styles.heading}>Solarized</Text>}
-    />
+    <NavigationContainer>
+      {
+        <FlatList
+          style={styles.container}
+          data={COLORS}
+          keyExtractor={(item) => item.colorName}
+          renderItem={({ item }) => (
+            <ColorBox colorName={item.colorName} hexCode={item.hexCode} />
+          )}
+          ListHeaderComponent={<Text style={styles.heading}>Solarized</Text>}
+        />
+      }
+    </NavigationContainer>
   );
 }
 const styles = StyleSheet.create({
