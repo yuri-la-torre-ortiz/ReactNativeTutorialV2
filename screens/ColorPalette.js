@@ -2,11 +2,12 @@ import React from 'react';
 import { FlatList, Text, StyleSheet } from 'react-native';
 import ColorBox from '../components/ColorBox';
 
-const ColorPalette = () => {
+const ColorPalette = ({ route }) => {
+  const { colors, paletteName } = route.params;
   return (
     <FlatList
       style={styles.container}
-      data={COLORS}
+      data={colors}
       keyExtractor={(item) => item.colorName}
       renderItem={({ item }) => (
         <ColorBox colorName={item.colorName} hexCode={item.hexCode} />

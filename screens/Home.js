@@ -25,7 +25,10 @@ const Home = ({ navigation }) => {
     <View>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('ColorPalette');
+          navigation.navigate('ColorPalette', {
+            paletteName: 'Solarized',
+            colors: SOLARIZED,
+          });
         }}
       >
         <Text>Solarized</Text>
