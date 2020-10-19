@@ -8,3 +8,6 @@ const PalettePreview = () => {
     </View>
   );
 };
+
+export default PalettePreview;
+
