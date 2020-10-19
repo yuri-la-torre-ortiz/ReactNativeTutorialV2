@@ -9,7 +9,7 @@ const Home = ({ navigation }) => {
           navigation.navigate('ColorPalette');
         }}
       >
-        <Text>Home Screen</Text>
+        <Text>Solarized</Text>
       </TouchableOpacity>
     </View>
   );
