@@ -20,6 +20,12 @@ const SOLARIZED = [
   { colorName: 'Green', hexCode: '#859899' },
 ];
 
+const COLOR_PALETTES = [
+  { paletteName: 'Solarized', colors: SOLARIZED },
+  { paletteName: 'Frontend Master', colors: FRONTEND_MASTERS },
+  { paletteName: 'Rainbow', colors: RAINBOW },
+];
+
 const Home = ({ navigation }) => {
   return (
     <View>
