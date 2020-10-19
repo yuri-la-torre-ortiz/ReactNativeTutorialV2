@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
-const PalettePreview = () => {
+const PalettePreview = ({ onPress, palette }) => {
   return (
-    <View>
-      <Text>Almost there ...</Text>
-    </View>
+    <TouchableOpacity onPress={onPress}>
+      <Text>{palette.paletteName}</Text>
+    </TouchableOpacity>
   );
 };
 
 export default PalettePreview;
-
