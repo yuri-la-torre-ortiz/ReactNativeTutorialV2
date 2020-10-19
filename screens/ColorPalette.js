@@ -12,7 +12,6 @@ const ColorPalette = ({ route }) => {
       renderItem={({ item }) => (
         <ColorBox colorName={item.colorName} hexCode={item.hexCode} />
       )}
-      ListHeaderComponent={<Text style={styles.heading}>Solarized</Text>}
     />
   );
 };

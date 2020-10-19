@@ -10,8 +10,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="ColorPalette" component={ColorPalette} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen
+          name="ColorPalette"
+          component={ColorPalette}
+          options={({ route }) => ({ title: route.params.paletteName })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
