@@ -36,13 +36,14 @@ const styles = StyleSheet.create({
     width: 30,
     marginRight: 10,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 1,
-    elevation: 2,
+    elevation: 10,
   },
   list: {
     marginBottom: 20,
+    flexDirection: 'row',
   },
 });
 export default PalettePreview;
